@@ -1,0 +1,76 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- Main Content -->
+      <div class="card mt-4">
+        <div class="card-header">
+          <h5>New Vulnerability Findings</h5>
+        </div>
+        <div class="card-body">
+          <!-- List of New Vulnerabilities with Fade-in Animation -->
+          <ul id="vulnerabilityList" class="list-group list-group-flush animate__animated animate__fadeIn">
+            <li class="list-group-item">Vulnerability 1 - Broken authentication<span class="vulnerabilityDescription">Description of vulnerability 1</span></li>
+            <!-- Add more items for each new vulnerability -->
+          </ul>
+          <!-- Description Section (Initially Hidden) -->
+          <div id="vulnerabilityDetails" class="mt-3" style="display: none;">
+            <h6>Vulnerability Details:Broken Authentication is a type of security vulnerability that occurs when an application improperly implements authentication and session management functionality, allowing attackers to compromise user accounts or assume user identities. This vulnerability can lead to unauthorized access to sensitive information or unauthorized actions within the application.</h6>
+            <p id="vulnerabilityDescription"></p>
+          </div>
+          <!-- Action Button -->
+          <div class="text-center mt-3">
+            <button id="viewDetailsBtn" type="button" class="btn btn-primary btn-lg">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Feature Section with Animated Cards -->
+<div class="container mt-5">
+  <div class="row">
+    <!-- Feature 1: Security Monitoring -->
+    <div class="col-md-4">
+      <div class="card mb-4 animate__animated animate__fadeInLeft">
+        <div class="card-body">
+          <h5 class="card-title">Security Monitoring</h5>
+          <p class="card-text">Monitor your system's security in real-time and receive alerts for any suspicious activities.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Feature 2: Automated Remediation -->
+    <div class="col-md-4">
+      <div class="card mb-4 animate__animated animate__fadeInUp">
+        <div class="card-body">
+          <h5 class="card-title">Automated Remediation</h5>
+          <p class="card-text">Automatically remediate security issues and vulnerabilities to ensure your system's safety.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Feature 3: Comprehensive Reporting -->
+    <div class="col-md-4">
+      <div class="card mb-4 animate__animated animate__fadeInRight">
+        <div class="card-body">
+          <h5 class="card-title">Comprehensive Reporting</h5>
+          <p class="card-text">Generate detailed reports on security findings and measures taken for compliance purposes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Function to handle click on "View Details" button
+  document.getElementById('viewDetailsBtn').addEventListener('click', function() {
+    // Show the vulnerability details section
+    document.getElementById('vulnerabilityDetails').style.display = 'block';
+    // Hide the "View Details" button
+    this.style.display = 'none';
+  });
+</script>
+{% endblock content %}

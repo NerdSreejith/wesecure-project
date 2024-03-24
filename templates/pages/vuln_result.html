@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Scan Result</h1>
+<p>URL: {{ url }}</p>
+
+<h2>Nikto Scan Output:</h2>
+<p style="color: red;">{{ nikto_output }}</p>
+
+{% endblock content %} 
+
+{% comment %} {% load static %}
+
+{% block content %}
+<h1>Scan Result</h1>
+<p>URL: {{ url }}</p>
+
+<h2>Nuclei Scan Output:</h2>
+<pre>{{ nuclei_output }}</pre>
+
+{% endblock content %} {% endcomment %}

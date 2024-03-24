@@ -1,0 +1,54 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card mt-5">
+        <div class="card-header bg-primary text-white">
+          <h3 class="text-center">SCAN RESULT</h3>
+        </div>
+        <div class="card-body">
+          <div class="alert alert-info" role="alert">
+            <strong>URL:</strong> {{ url }}
+          </div>
+          <div class="subdomain-list">
+            <h4>Subdomains:</h4>
+            <ul class="list-group">
+              {% for subdomain in subdomains %}
+                <li class="list-group-item">{{ subdomain }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    border-radius: 10px;
+  }
+
+  .card-header {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .alert {
+    border-radius: 10px;
+  }
+
+  .subdomain-list {
+    margin-top: 20px;
+  }
+
+  .list-group-item {
+    border: none;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+</style>
+{% endblock content %}

@@ -1,0 +1,179 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block breadcrumbs %}
+  <!-- Breadcrumb code goes here if needed -->
+{% endblock breadcrumbs %}
+
+{% block content %}
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="mt-5">
+        <h2 class="text-success font-weight-bold mb-4" style="font-size: 36px; text-align:center;">WeSecure</h2> <!-- Center-aligned heading -->
+        <p class="lead">WeSecure is not just a web vulnerability scanner. It is a comprehensive web application security testing solution that can be used standalone or as part of complex environments. It offers built-in vulnerability assessment and management, along with seamless integration options with leading software development tools.</p>
+        <!-- WeSecure integration button -->
+        <div class="text-center">
+          <a href="#nmap" class="btn btn-primary btn-lg mt-4">Secure Your Web App Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <!-- Section 1: Nmap Scanning -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title text-success">Nmap Scanning</h5>
+          <p class="card-text">Nmap is a powerful network scanning tool used for port scanning, service version detection, and vulnerability scanning. Learn how to use Nmap for website vulnerability assessment.</p>
+          <a href="{% url 'basic_scan' %}" class="btn btn-success">Scan now</a>
+        </div>
+      </div>
+    </div>
+    <!-- Section 2: Vulnerability Scanning -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title text-danger">Vulnerability Scanning</h5>
+          <p class="card-text">Vulnerability scanning involves scanning a website or network for security weaknesses, misconfigurations, and vulnerabilities. Explore vulnerability scanning techniques and tools to identify and mitigate security risks.</p>
+          <a href="{% url 'scan' %}" class="btn btn-danger">Scan now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <!-- Section 1: Subdomain Feature -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title text-success">Subdomain Scanning</h5>
+          <p class="card-text">Vulnerability scanning involves scanning a website or network for security weaknesses, misconfigurations, and vulnerabilities. Explore vulnerability scanning techniques and tools to identify and mitigate security risks.</p>
+          <a href="{% url 'scan' %}" class="btn btn-success">Scan now</a>
+        </div>
+      </div>
+    </div>
+    <!-- Section 2: File Scanning Feature -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title text-danger">File Scanning</h5>
+          <p class="card-text">File scanning is the process of examining files within a system for malicious content or vulnerabilities. Discover file scanning techniques and tools to enhance your system's security posture.</p>
+          <a href="" class="btn btn-danger">Scan now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subdomain Feature
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-warning">Subdomain Scanning</h5>
+      <p class="card-text">Subdomain enumeration is the process of discovering subdomains associated with a website. Discovering subdomains can help expand your attack surface and enhance security awareness.</p>
+      <a href="{% url 'subdomain_scan' %}" class="btn btn-warning">Learn More</a>
+    </div>
+  </div> -->
+
+
+
+  <!-- Graph Section -->
+  <div class="mt-5">
+    <canvas id="myChart" width="400" height="200"></canvas>
+  </div>
+
+  <!-- Security Recommendations -->
+  <div class="mt-5">
+    <h3 class="mb-4 side-heading text-center">Security Recommendations</h3> <!-- Center-aligned heading -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Cross-Site Scripting (XSS)</h5>
+        <p class="card-text">Cross-site scripting (XSS) vulnerabilities allow attackers to inject malicious scripts into web pages viewed by other users. To mitigate XSS vulnerabilities:</p>
+        <ul>
+          <li>Ensure input validation and output encoding are performed on all user-generated content.</li>
+          <li>Implement Content Security Policy (CSP) headers to reduce the impact of XSS attacks.</li>
+          <li>Regularly update and patch web application frameworks and libraries to address known vulnerabilities.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">SQL Injection</h5>
+        <p class="card-text">SQL injection vulnerabilities allow attackers to execute arbitrary SQL queries on a web application's database. To mitigate SQL injection vulnerabilities:</p>
+        <ul>
+          <li>Use parameterized queries or prepared statements in database access code to prevent injection attacks.</li>
+          <li>Implement least privilege principles for database user permissions to limit the impact of successful attacks.</li>
+          <li>Regularly audit and sanitize user input to ensure it does not contain malicious SQL code.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Script for Chart -->
+<script>
+  // Updated data for the chart with more security-related information
+  const data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        label: 'SQL Injection',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+        data: [5, 10, 8, 15, 12, 10, 18]
+      },
+      {
+        label: 'Cross-Site Scripting (XSS)',
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+        data: [8, 15, 12, 10, 18, 20, 25]
+      },
+      {
+        label: 'DDoS Attacks',
+        backgroundColor: 'rgba(255, 206, 86, 0.5)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1,
+        data: [2, 5, 3, 8, 6, 4, 10]
+      }
+    ]
+  };
+
+  // Configuration options
+  const options = {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  };
+
+  // Create the chart
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'line', // Changed to line chart for better visualization of trends
+    data: data,
+    options: options
+  });
+</script>
+
+<style>
+  /* Styling for the side heading */
+  .side-heading {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center; /* Aligning text to the center */
+  }
+</style>
+
+{% endblock content %}

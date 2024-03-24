@@ -1,0 +1,62 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- [ Main Content ] start -->
+<!-- <div class="row">
+  <div class="col-sm-12">
+    <div class="card animate__animated animate__fadeInDown">
+      <h4 class="p-2">Subdomain Scan</h4>
+      <form id="scanForm" action="{% url 'subdomain_scan' %}" method="post" class="mt-3 animate__animated animate__fadeIn">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="urlField">URL:</label>
+          <input type="url" class="form-control" id="urlField" name="url" placeholder="Enter URL">
+        </div>
+        <button id="scanButton" type="submit" class="btn btn-primary animate__animated animate__fadeInUp">Scan</button>
+      </form>
+    </div>
+  </div>
+</div> -->
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card border-0 shadow-sm animate__animated animate__fadeInDown">
+      <div class="card-body">
+        <h4 class="card-title text-center mb-4">SUBDOMAIN SCAN</h4>
+        <form id="scanForm" action="{% url 'subdomain_scan' %}" method="post" class="mt-3 animate__animated animate__fadeIn">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="urlField">URL:</label>
+            <input type="url" class="form-control" id="urlField" name="url" placeholder="Enter URL">
+          </div>
+          <button id="scanButton" type="submit" class="btn btn-primary btn-block animate__animated animate__fadeInUp">Scan</button>
+        </form>
+        <small class="text-muted d-block text-center mt-3">SCANNING TAKES SOME TIME</small>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Additional Content -->
+<div class="row mt-4">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">What is Subdomain Scanning?</h5>
+        <p class="card-text">Subdomain scanning is the process of identifying and enumerating subdomains associated with a particular domain. It helps in understanding the attack surface of a target and discovering potential security risks.</p>
+        <a href="#" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">How to Perform Subdomain Scanning?</h5>
+        <p class="card-text">Discover various techniques and tools used for subdomain scanning, including API-based services, brute-force methods, and DNS reconnaissance. Enhance your cybersecurity posture by thoroughly assessing your subdomain infrastructure.</p>
+        <a href="#" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}

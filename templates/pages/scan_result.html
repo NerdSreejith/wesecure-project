@@ -1,0 +1,43 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card mt-5 shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Website Scan Result</h4>
+                </div>
+                <div class="card-body">
+                    <div class="result-info mb-4">
+                        <p class="lead">URL: <span class="text-primary">{{ url }}</span></p>
+                        <p class="lead">IP Address: <span class="text-primary">{{ ip_address }}</span></p>
+                    </div>
+                    <div class="open-ports">
+                        <h5 class="mb-3">Open Ports:</h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Port</th>
+                                        <th scope="col">Service</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for port_info in open_ports %}
+                                    <tr>
+                                        <td>{{ port_info.port }}</td>
+                                        <td>{{ port_info.service }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

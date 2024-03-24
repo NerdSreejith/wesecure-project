@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+  <!-- about section -->
+
+  {% block aactive %}
+  active
+  {% endblock aactive %}
+{% block content %}
+  
+
+  
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="heading_container heading_center">
+        <h2>
+          About <span>Us</span>
+        </h2>
+        <p>
+          WeSecure Empowering your online security.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static '/images/about.svg' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h3>
+              We Are WeSecure
+            </h3>
+            <p>
+              At WeSecure, our mission extends beyond just providing security solutions. We prioritize building strong
+              relationships with our clients, offering personalized support and guidance every step of the way.
+              Additionally, we believe in transparency and education, empowering our clients with the knowledge and
+              tools they need to enhance their own cybersecurity posture. With a focus on trust, reliability, and
+              innovation, WeSecure is here to protect and support your digital journey.
+            </p>
+            <p>
+              Cybersecurity is not just a necessity; it's a continuous journey. At WeSecure, we understand the
+              ever-evolving nature of cyber threats and the importance of staying proactive. That's why we're constantly
+              refining our solutions, staying up-to-date with the latest industry trends, and investing in research and
+              development. With WeSecure by your side, you can navigate the complexities of the digital landscape with
+              confidence, knowing that your security is our top priority.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+{% endblock content %}
